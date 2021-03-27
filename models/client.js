@@ -7,5 +7,4 @@ const schema = new Schema({
   ville: String,
 })
 
-
 module.exports = mongoose.model('Client', schema);
