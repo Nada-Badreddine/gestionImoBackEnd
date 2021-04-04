@@ -3,6 +3,7 @@ const app = express();
 const bodyParser= require('body-parser')
 const mongoose = require("mongoose")
 const Client = require('./models/client');
+const Imo = require('./models/imo');
 var cors = require('cors')
 
 // const Product = require('./models/product');
@@ -11,11 +12,6 @@ app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 
 app.use(cors())
-
-app.get('/products', async  function (req, res) {
-    const clients = await Client.find();
-   return res.json({ message: 'ok', status:200, result: clients}).status(200)
-})
 
 app.get('/clients', async  function (req, res) {
     const clients = await Client.find();
@@ -36,6 +32,17 @@ app.post('/clients', async function (req, res) {
  app.get('/clients/:id', async function (req, res) {
     const client = await Client.findOne({ _id:  req.params.id });
    return res.json({ message: 'ok', status:200, result: client}).status(200)
+})
+
+
+app.post('/imo', async function (req, res) {
+   const imo = await Imo.create(req.body)
+   return res.json({ result: imo, status:200}).status(200)
+})
+
+app.get('/imo', async  function (req, res) {
+   const clients = await Imo.find();
+  return res.json({ message: 'ok', status:200, result: clients}).status(200)
 })
 
     app.listen(4000, () =>{
