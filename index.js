@@ -54,6 +54,7 @@ app.post("/clients/login", async function (req, res) {
 });
 
 app.post("/imo", async function (req, res) {
+  console.log("imo", req.body);
   const imo = await Imo.create(req.body);
   return res.json({ result: imo, status: 200 }).status(200);
 });

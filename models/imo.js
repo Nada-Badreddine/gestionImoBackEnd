@@ -1,12 +1,12 @@
-const mongoose = require('mongoose')
-const {  Schema } = mongoose
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 const schema = new Schema({
-  designation: Number,
+  designation: String,
   compte_comptable: Number,
   duree: Number,
   montant: Number,
   name: String,
-})
+});
 
-module.exports = mongoose.model('Imo', schema);
+module.exports = mongoose.model("Imo", schema);
