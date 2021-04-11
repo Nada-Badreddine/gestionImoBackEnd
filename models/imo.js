@@ -7,6 +7,8 @@ const schema = new Schema({
   duree: Number,
   montant: Number,
   name: String,
+  dateAquisition: Date,
+  serviceDate: Date,
 });
 
 module.exports = mongoose.model("Imo", schema);
