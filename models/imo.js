@@ -7,6 +7,8 @@ const schema = new Schema({
   duree: Number,
   montant: Number,
   name: String,
+  type: String,
+  category: String,
   dateAquisition: Date,
   serviceDate: Date,
 });
