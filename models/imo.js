@@ -2,13 +2,18 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const schema = new Schema({
-  designation: String,
-  compte_comptable: Number,
+  Designation: String,
   duree: Number,
-  montant: Number,
+  
+  Coefficient: Number,
+  Quantite: Number,
+  Montant : Number,
+  /**** */
   name: String,
-  type: String,
+  comptes:Number,
   category: String,
+  type: String,
+  /*** */
   dateAquisition: Date,
   serviceDate: Date,
 });
