@@ -20,6 +20,7 @@ app.get("/clients", async function (req, res) {
 });
 // zid heja fi base add
 app.post("/clients", async function (req, res) {
+  console.log("req.body)", req.body);
   const client = await Client.create(req.body);
   return res.json({ message: client, status: 200 }).status(200);
 });

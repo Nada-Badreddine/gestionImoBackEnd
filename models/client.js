@@ -1,11 +1,12 @@
-const mongoose = require('mongoose')
-const {  Schema } = mongoose
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 const schema = new Schema({
   username: String,
   email: String,
   password: String,
- 
-})
-// recherche google ekteb type int  mongooose type 
-module.exports = mongoose.model('Client', schema);
+  website: String,
+  phone: String,
+});
+// recherche google ekteb type int  mongooose type
+module.exports = mongoose.model("Client", schema);
