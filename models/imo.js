@@ -5,7 +5,6 @@ const schema = new Schema({
   Designation: String,
   duree: Number,
 
-  Coefficient: Number,
   Quantite: Number,
   Montant: Number,
   /**** */
