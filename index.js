@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 const Client = require("./models/client");
 const Imo = require("./models/imo");
+const Exp = require("./models/exp");
 var cors = require("cors");
 
 // const Product = require('./models/product');
@@ -59,14 +60,32 @@ app.post("/imo", async function (req, res) {
   const imo = await Imo.create(req.body);
   return res.json({ result: imo, status: 200 }).status(200);
 });
+app.post("/exp", async function (req, res) {
+  console.log("exp", req.body);
+  const exp = await Exp.create(req.body);
+  return res.json({ result: exp, status: 200 }).status(200);
+});
 
 app.get("/imo", async function (req, res) {
   const clients = await Imo.find();
   return res.json({ message: "ok", status: 200, result: clients }).status(200);
 });
 
+app.get("/exp", async function (req, res) {
+  const clients = await Imo.find();
+  return res.json({ message: "ok", status: 200, result: clients }).status(200);
+});
+
+
+
 app.delete("/imo/:id", async function (req, res) {
   await Imo.deleteOne({ _id: req.params.id });
+  return res
+    .json({ message: "ok", result: req.params.id, status: 200 })
+    .status(200);
+});
+app.delete("/exp/:id", async function (req, res) {
+  await Exp.deleteOne({ _id: req.params.id });
   return res
     .json({ message: "ok", result: req.params.id, status: 200 })
     .status(200);
@@ -75,6 +94,10 @@ app.delete("/imo/:id", async function (req, res) {
 app.post("/imo", async function (req, res) {
   const imo = await Imo.create(req.body);
   return res.json({ result: imo, status: 200 }).status(200);
+});
+app.post("/exp", async function (req, res) {
+  const exp = await Exp.create(req.body);
+  return res.json({ result: exp, status: 200 }).status(200);
 });
 
 app.listen(4000, () => {

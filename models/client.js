@@ -5,7 +5,7 @@ const schema = new Schema({
   username: String,
   email: String,
   password: String,
-  website: String,
+  
   phone: String,
 });
 // recherche google ekteb type int  mongooose type
