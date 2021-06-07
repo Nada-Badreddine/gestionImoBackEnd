@@ -72,11 +72,9 @@ app.get("/imo", async function (req, res) {
 });
 
 app.get("/exp", async function (req, res) {
-  const clients = await Imo.find();
-  return res.json({ message: "ok", status: 200, result: clients }).status(200);
+  const expls = await Exp.find();
+  return res.json({ message: "ok", status: 200, result: expls }).status(200);
 });
-
-
 
 app.delete("/imo/:id", async function (req, res) {
   await Imo.deleteOne({ _id: req.params.id });
